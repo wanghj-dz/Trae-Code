@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python 通用调试",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            },
+            "cwd": "${workspaceFolder}",
+            "args": []
+        },
+        {
+            "name": "Python 带参数调试",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            },
+            "cwd": "${workspaceFolder}",
+            "args": [
+                "--example-param",
+                "value"
+            ]
+        },
+        {
+            "name": "Python 模块调试",
+            "type": "python",
+            "request": "launch",
+            "module": "${fileBasenameNoExtension}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

@@ -1,0 +1,76 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+FreeCAD GUI宏：创建立方体
+可在FreeCAD图形界面中直接运行
+"""
+
+import FreeCAD
+import FreeCADGui
+import Part
+import Draft
+from FreeCAD import Base
+import sys
+import os
+
+def create_cube_with_ui():
+    """带用户交互的立方体创建函数"""
+    try:
+        # 检查活动文档，不存在则创建
+        if FreeCAD.ActiveDocument is None:
+            doc = FreeCAD.newDocument("CubeDocument")
+        else:
+            doc = FreeCAD.ActiveDocument
+        
+        # 创建立方体参数
+        length = 10.0
+        width = 10.0
+        height = 10.0
+        cube_name = "MyCube"
+        
+        # 尝试从环境变量获取参数（如果在命令行启动FreeCAD时设置）
+        if hasattr(os, 'environ'):
+            if 'FC_LENGTH' in os.environ:
+                try:
+                    length = float(os.environ['FC_LENGTH'])
+                except:
+                    print("警告: 环境变量FC_LENGTH无效，使用默认值")
+            if 'FC_WIDTH' in os.environ:
+                try:
+                    width = float(os.environ['FC_WIDTH'])
+                except:
+                    print("警告: 环境变量FC_WIDTH无效，使用默认值")
+            if 'FC_HEIGHT' in os.environ:
+                try:
+                    height = float(os.environ['FC_HEIGHT'])
+                except:
+                    print("警告: 环境变量FC_HEIGHT无效，使用默认值")
+        
+        # 创建立方体
+        print(f"创建 {length}x{width}x{height} mm 的立方体...")
+        cube = Part.makeBox(length, width, height)
+        
+        # 创建Part对象
+        obj = doc.addObject("Part::Feature", cube_name)
+        obj.Shape = cube
+        
+        # 重新计算文档
+        doc.recompute()
+        
+        # 切换到Part工作区并显示立方体
+        FreeCADGui.activateWorkbench("PartWorkbench")
+        FreeCADGui.SendMsgToActiveView("ViewFit")
+        FreeCADGui.activeDocument().activeView().viewAxometric()
+        
+        print("立方体创建成功！")
+        return obj
+        
+    except Exception as e:
+        print(f"创建立方体时出错: {str(e)}")
+        # 在FreeCAD GUI中显示错误
+        FreeCAD.Console.PrintError(f"创建立方体失败: {str(e)}\n")
+        return None
+
+# 运行立方体创建函数
+if __name__ == "__main__":
+    cube_obj = create_cube_with_ui()

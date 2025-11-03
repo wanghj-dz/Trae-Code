@@ -1,0 +1,54 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "普通Python调试",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "cwd": "${workspaceFolder}",
+            "redirectOutput": true,
+            "python": "C:\\Users\\admin\\scoop\\apps\\python\\current\\python.exe"
+        },
+        {
+            "name": "FreeCAD Python 脚本调试",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\bin\\freecadcmd.exe",
+            "args": [
+                "${workspaceFolder}/FreeCadpys/create_cube.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "python": "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\bin\\python.exe",
+            "env": {
+                "PYTHONPATH": "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\lib"
+            },
+            "cwd": "${workspaceFolder}",
+            "redirectOutput": true
+        },
+        {
+            "name": "FreeCAD 带参数脚本调试",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\bin\\freecadcmd.exe",
+            "args": [
+                "${workspaceFolder}/FreeCadpys/create_cube.py"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "python": "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\bin\\python.exe",
+            "env": {
+                "PYTHONPATH": "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\lib",
+                "FC_LENGTH": "20",
+                "FC_WIDTH": "15",
+                "FC_HEIGHT": "10",
+                "FC_FCSTD": "${workspaceFolder}/FCStds/debug_cube.FCStd"
+            },
+            "cwd": "${workspaceFolder}",
+            "redirectOutput": true
+        }
+    ]
+}

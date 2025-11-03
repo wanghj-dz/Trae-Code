@@ -1,0 +1,51 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "运行FreeCAD脚本",
+            "type": "shell",
+            "command": "& 'C:\\Users\\admin\\scoop\\apps\\freecad\\current\\bin\\freecadcmd.exe' '${file}'",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "运行FreeCAD脚本(带参数)",
+            "type": "shell",
+            "command": "$env:FC_LENGTH=15; $env:FC_WIDTH=15; $env:FC_HEIGHT=15; $env:FC_FCSTD='${workspaceFolder}/FCStds/output_cube.FCStd'; & 'C:\\Users\\admin\\scoop\\apps\\freecad\\current\\bin\\freecadcmd.exe' '${file}'",
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "FreeCAD版本检查",
+            "type": "shell",
+            "command": "& 'C:\\Users\\admin\\scoop\\apps\\freecad\\current\\bin\\freecadcmd.exe' --version",
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

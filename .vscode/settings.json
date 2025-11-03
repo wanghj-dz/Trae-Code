@@ -1,0 +1,54 @@
+{
+    // FreeCAD Python配置（用于FreeCadpys文件夹中的文件）
+    "python.pythonPath": "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\bin\\python.exe",
+    "python.autoComplete.extraPaths": [
+        "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\lib"
+    ],
+    "python.analysis.extraPaths": [
+        "C:\\Users\\admin\\scoop\\apps\\freecad\\current\\lib"
+    ],
+    // 普通Python程序配置（用于putongpys文件夹中的文件）
+    "python.defaultInterpreterPath": "C:\\Users\\admin\\scoop\\apps\\python\\current\\python.exe",
+    "python.terminal.activateEnvironment": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120",
+        "--ignore=E203,W503"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "--line-length=120"
+    ],
+    "editor.formatOnSave": true,
+    "editor.formatOnType": false,
+    "editor.rulers": [120],
+    "files.associations": {
+        "*.FCMacro": "python"
+    },
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/*.FCStd": true,
+        "**/*.stl": true
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/.git": true,
+        "**/*.FCStd": true,
+        "**/*.stl": true
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        }
+    }
+}
