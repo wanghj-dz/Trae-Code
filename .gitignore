@@ -42,7 +42,7 @@ __pycache__
 *.ai*
 *.eps*
 *.pdf*
-*.txt*
+# *.txt* - 不排除txt文件，允许跟踪
 *.csv*
 *.xml*
 *.json*
