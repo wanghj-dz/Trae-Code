@@ -1,0 +1,7 @@
+script started
+argv: D:\Trae-Code\FreeCadpys\scripts\..\\draft_line_example.py --x1 0 --y1 0 --z1 0 --x2 50 --y2 0 --z2 0 --name MyLine --fcstd ..\FCStds\myline_from_wrapper.FCStd
+unknown argv: []
+parsed args: Namespace(x1=0.0, y1=0.0, z1=0.0, x2=50.0, y2=0.0, z2=0.0, name='MyLine', fcstd='..\\FCStds\\myline_from_wrapper.FCStd')
+after env override args: Namespace(x1=0.0, y1=0.0, z1=0.0, x2=50.0, y2=0.0, z2=0.0, name='MyLine', fcstd='..\\FCStds\\myline_from_wrapper.FCStd')
+created: MyLine
+saved to: ..\FCStds\myline_from_wrapper.FCStd
